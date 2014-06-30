@@ -44,7 +44,6 @@ function uploadFiles(files){
         // Append the paths variable to our FormData to be sent to the server
         // Currently, As far as I know, HTTP requests do not natively carry the path data
         // So we must add it to the request manually.
-
         // Open and send HHTP requests to upload.php
         xhr.open('POST', "folder_upload.php", true);
         xhr.send(this.data);
