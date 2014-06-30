@@ -6,12 +6,11 @@
 <link href="css/dropzone.css" type="text/css" rel="stylesheet" />
  
 <!-- 2 -->
-<script src="dropzone.js"></script>
+<script src="dropzone_lai.js"></script>
  
 </head>
  
 <body>
-<button id="submit-all">Submit all files</button> 
 <!-- 3 -->
 <form action="upload.php" class="dropzone dz-clickable" id="my-dropzone">
     <div class="dz-default dz-message bg-color bg-img font-color">
