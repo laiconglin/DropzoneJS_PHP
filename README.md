@@ -1,2 +1,2 @@
-DropboneJS_PHP
+DropzoneJS_PHP
 ==============
