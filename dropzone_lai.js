@@ -426,7 +426,7 @@ require.register("dropzone/lib/dropzone.js", function (exports, module) {
           _ref = file.previewElement.querySelectorAll("[data-dz-name]");
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             node = _ref[_i];
-            node.textContent = file.name;
+            node.textContent = file.fullPath != undefined ? file.fullPath : file.name;
           }
           _ref1 = file.previewElement.querySelectorAll("[data-dz-size]");
           for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
@@ -715,6 +715,7 @@ require.register("dropzone/lib/dropzone.js", function (exports, module) {
             return _this.hiddenFileInput.addEventListener("change", function() {
               var file, files, _i, _len;
               files = _this.hiddenFileInput.files;
+              
               if (files.length) {
                 for (_i = 0, _len = files.length; _i < _len; _i++) {
                   file = files[_i];
@@ -1476,9 +1477,12 @@ require.register("dropzone/lib/dropzone.js", function (exports, module) {
           }
         }
       }
+      var paths = "";
       for (i = _m = 0, _ref5 = files.length - 1; 0 <= _ref5 ? _m <= _ref5 : _m >= _ref5; i = 0 <= _ref5 ? ++_m : --_m) {
         formData.append(this._getParamName(i), files[i], files[i].name);
+        paths += (files[i].fullPath != undefined ? files[i].fullPath : files[i].name)+ "###";
       }
+      formData.append("paths", paths);
       return xhr.send(formData);
     };
 

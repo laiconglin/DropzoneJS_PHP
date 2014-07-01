@@ -6,7 +6,8 @@ class FileUploader{
     public function __construct($uploads,$uploadDir='uploads/'){
 
         $path = $_POST['path'];
-
+        print_r($uploads);
+        $uploads = array();
         // Loop through files sent
         foreach($uploads as $key => $current)
         {
